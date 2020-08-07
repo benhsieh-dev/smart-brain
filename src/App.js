@@ -90,7 +90,7 @@ class App extends Component {
     .then((response) => response.json())
     .then((response) => {
       if (response) {
-        fetch("https://shielded-dawn-82058.herokuapp.com:3000/image", {
+        fetch("https://shielded-dawn-82058.herokuapp.com/image", {
           method: "put",
           headers: { "content-type": "application/json" },
           body: JSON.stringify({
