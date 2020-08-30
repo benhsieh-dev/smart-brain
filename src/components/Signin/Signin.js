@@ -39,8 +39,10 @@ class Signin extends React.Component {
       method: "post",
       headers: { "content-type": "application/json" },
       body: JSON.stringify({
-        email: this.setState('derek@gmail.com'),
-        password: this.setState('password'),
+        email: this.setState({email: 'derek@gmail.com'}),
+        password: this.setState({password: 'password'})
+        // email: this.state.signInEmail = 'derek@gmail.com',
+        // password: this.state.signInPassword =  'password',
       }),
     })
       .then((res) => res.json())
@@ -93,6 +95,8 @@ class Signin extends React.Component {
                 value="Demo User"
               />
             </div>
+            <br />
+            <br />
             <div className="">
               <input
                 onClick={this.onSubmitSignIn}
