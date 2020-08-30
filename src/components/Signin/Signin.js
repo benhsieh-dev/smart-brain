@@ -39,8 +39,6 @@ class Signin extends React.Component {
       method: "post",
       headers: { "content-type": "application/json" },
       body: JSON.stringify({
-        // email: this.setState({email: 'derek@gmail.com'}),
-        // password: this.setState({password: 'password'})
         email: 'derek@gmail.com',
         password: 'password',
       }),
