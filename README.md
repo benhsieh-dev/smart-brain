@@ -5,6 +5,11 @@
   # Technologies Used
 
   - React JS
+  - PostgreSQL
   - HTML
   - CSS
   - Clarifai API
+  - Tachyons CSS
+  - React Particles JS
+  - React Tilt
+  - Knex JS

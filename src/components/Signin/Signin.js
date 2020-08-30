@@ -34,6 +34,23 @@ class Signin extends React.Component {
         }
       });
   }
+  onDemoSignIn = () => {
+    fetch("https://shielded-dawn-82058.herokuapp.com/signin", {
+      method: "post",
+      headers: { "content-type": "application/json" },
+      body: JSON.stringify({
+        email: this.setState('derek@gmail.com'),
+        password: this.setState('password'),
+      }),
+    })
+      .then((res) => res.json())
+      .then((user) => {
+        if (user.id) {
+          this.props.loadUser(user);
+          this.props.onRouteChange("home");
+        }
+      });
+  }
 
   render() {
     const { onRouteChange } = this.props; 
@@ -68,6 +85,14 @@ class Signin extends React.Component {
                 />
               </div>
             </fieldset>
+            <div className="">
+              <input
+                onClick={this.onDemoSignIn}
+                className="b ph3 pv2 input-reset ba b--black bg-transparent grow pointer f6 dib pointer"
+                type="submit"
+                value="Demo User"
+              />
+            </div>
             <div className="">
               <input
                 onClick={this.onSubmitSignIn}
